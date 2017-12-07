@@ -1,0 +1,399 @@
+@import "fonts"
+@import "base"
+@import "libs"
+@import "vars"
+
+*
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    &:before, &:after
+        -webkit-box-sizing: border-box
+        -moz-box-sizing: border-box
+        box-sizing: border-box
+
+*::-webkit-input-placeholder
+    color: #666
+    opacity: 1
+
+*:-moz-placeholder
+    color: #666
+    opacity: 1
+
+*::-moz-placeholder
+    color: #666
+    opacity: 1
+
+*:-ms-input-placeholder
+    color: #666
+    opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+    color: #666
+
+body input:required:valid,
+body textarea:required:valid
+    color: #666
+
+html, body
+    height: 100%
+
+body
+    font-size: 16px
+    min-width: 320px
+    position: relative
+    line-height: 1.65
+    font-family: $default-font, "Arial", "Helvetica", sans-serif
+    overflow-x: hidden
+    opacity: 1
+
+.img-responsive
+    display: block
+    max-width: 100%
+    height: auto
+
+.fixed
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 200
+    width: 100%
+    border-bottom: 1px solid $text-color
+    animation: smoothScroll .5s forwards
+
+/* header */
+
+.header
+    background-color: $main-color
+    .container
+        display: flex
+        align-items: center
+
+.header__logo
+    width: 9.0598%
+
+/* logo */
+
+.logo
+    background: -webkit-linear-gradient(0, #7c28b1, #35eef6)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    font-family: "Lato-Light", sans-serif
+    font-size: 36px
+    text-decoration: none
+    &:active
+        background: transparent
+    &:hover
+        background: -webkit-linear-gradient(270deg, #7c28b1, #35eef6)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+.header__menu
+    width: 84.358%
+
+/* menu */
+
+.menu
+    .menu__item
+        float: right
+        margin-left: 40px
+        a
+            display: block
+            padding: 30px 0
+            color: $text-color
+            font-family: "Lato-Light", sans-serif
+            font-size: 18px
+            text-transform: capitalize
+            text-decoration: none
+        &:last-child
+            margin-left: 0
+        &:hover
+            > a
+                color: $accent-color
+    .menu__item.active
+        > a
+            color: $accent-color
+
+
+/* submenu */
+
+.submenu
+    position: relative
+    .menu
+        position: absolute
+        top: 71px
+        left: -10%
+        display: none
+        border: 1px solid $text-color
+        .menu__item
+            float: none
+            display: block
+            margin: 0
+            a
+                padding: 20px 30px
+                background-color: $main-color
+                white-space: nowrap
+    &:after
+        content: ""
+        position: absolute
+        top: 50%
+        right: 0
+        transform: translate(0, -50%)
+        width: 7px
+        height: 4px
+        background: url(../img/submenu_arrow_down.png) no-repeat center center
+        background-size: cover
+    &:hover
+        > .menu
+            display: block
+
+.menu
+    .submenu
+        > a
+            padding-right: 16px
+
+/* search */
+
+.header__search
+    width: 6.5822%
+    span
+        float: right
+        padding: 10px
+        color: #d1d5d8
+        font-size: 16px
+        border: 1px solid #d1d5d8
+        border-radius: 50%
+    &:hover
+        span
+            color: $text-color
+            border-color: $text-color
+
+.header__bottom
+    display: none
+
+.search
+    margin: 10px auto 32px
+    padding: 10px
+    font-size: 0
+    input
+        padding: 8px
+        outline: none
+        font-family: "Lato-Light", sans-serif
+        font-size: 16px
+    .search__input
+        border: 1px solid #d1d5d8
+    .search__submit
+        border: 1px solid $accent-color
+        color: $main-color
+        background-color: $accent-color
+        &:hover
+            border-color: #84e7ff
+            background-color: #84e7ff
+            cursor: pointer
+
+
+/* content */
+
+.content
+    background-color: $main-color
+
+.content__header
+    padding: 110px 0
+    background: #7c28b1
+    background: linear-gradient(to right, #7c28b1, #35eef6)
+    text-align: center
+    h1
+        margin: 0 0 12px
+        color: $main-color
+        font-family: "Lato-Light", sans-serif
+        font-size: 60px
+        text-transform: capitalize
+    p
+        color: $main-color
+        font-size: 16px
+        text-transform: capitalize
+
+.content__main
+    padding: 70px 0
+    text-align: center
+
+.content__menu
+    margin: 0 auto 30px
+    width: 50%
+    .menu__item
+        float: none
+        display: table-cell
+        margin: 0
+        width: 3%
+        padding: 11px 0 12px
+        border-top: 1px solid #bdc3c7
+        border-right: 1px solid #bdc3c7
+        border-bottom: 1px solid #bdc3c7
+        font-family: "Lato-Regular", sans-serif
+        font-size: 14px
+        &:first-child
+            border-left: 1px solid #bdc3c7
+            border-radius: 6px 0 0 6px
+        &:last-child
+            border-radius: 0 6px 6px 0
+        &:hover
+            cursor: pointer
+            color: $main-color
+            border-color: $accent-color
+            background-color: $accent-color
+
+.content__collection
+    margin-bottom: 50px
+    .content__item
+        width: 31.624%
+        padding: 15px
+        img
+            display: block
+            max-width: 100%
+            height: auto
+
+.content__btn
+    display: inline-block
+    padding: 11px 29px 12px 30px
+    border: 1px solid #bdc3c7
+    border-radius: 6px
+    color: $text-color
+    font-size: 14px
+    text-transform: capitalize
+    text-decoration: none
+    &:hover
+        color: $main-color
+        background-color: $text-color
+
+/* footer */
+
+.footer__top
+    padding: 49px 0 43px
+    background-color: #ecf0f1
+    .container
+        display: flex
+        align-items: center
+
+.footer__aboutUs
+    width: 31.255%
+    h3
+        margin: 0 0 26px
+        font-family: "Lato-Light", sans-serif
+        font-size: 20px
+        text-transform: capitalize
+    p
+        margin: 0
+        font-family: "Lato-Light", sans-serif
+        font-size: 16px
+        word-wrap: break-word
+
+.footer__contactUs
+    width: 43%
+    padding: 0 23px
+    h3
+        margin: 0 0 26px
+        font-family: "Lato-Light", sans-serif
+        font-size: 20px
+        text-transform: capitalize
+        text-align: left
+    .contactMenu
+        font-size: 0
+        .contactMenu__item
+            display: inline-block
+            width: 47%
+            margin: 0 27px 10px 0
+            vertical-align: top
+            p
+                margin: 0
+                font-family: "Lato-Light", sans-serif
+                font-size: 16px
+            span
+                padding: 3px 5px
+                margin-right: 15px
+                color: #ac6aca
+                border: 1px solid #ac6aca
+                border-radius: 50%
+                font-size: 14px
+            &:nth-child(2)
+                margin: 0 0 10px
+                span
+                    padding: 3px 6px
+            &:nth-child(3)
+                display: block
+                margin-top: -26px
+            &:nth-child(5)
+                margin: 0 0 10px
+            a
+                padding: 11px 32px
+                border: 1px solid #bdc3c7
+                border-radius: 6px
+                color: $text-color
+                font-size: 14px
+                text-decoration: none
+                &:hover
+                    color: $main-color
+                    background-color: $text-color
+
+.footer__social
+    width: 25.745%
+    h3
+        margin: 0 0 26px
+        font-family: "Lato-Light", sans-serif
+        font-size: 20px
+        text-transform: capitalize
+        text-align: left
+    .socialMenu
+        font-size: 0
+        .socialMenu__item
+            float: left
+            width: 20%
+            margin: 0 0 15px
+            text-align: center
+            span
+                padding: 8px 9px
+                font-size: 23px
+                color: #d1d5d8
+                border: 1px solid #d1d5d8
+                border-radius: 50%
+            &:nth-child(1)
+                span
+                    padding: 8px 12px
+            &:hover
+                span
+                    color: $main-color
+                    background-color: $text-color
+
+.footer__bottom
+    padding: 30px 0
+    background-color: #e3e7e9
+
+.footer__copyright
+    font-family: "Lato-Light", sans-serif
+    font-size: 16px
+    text-align: center
+
+/* top btn */
+
+.topBtn
+    position: fixed
+    bottom: 20px
+    right: 20px
+    z-index: 2
+    display: none
+    width: 64px
+    height: 64px
+    background: url(../img/up-chevron.svg) no-repeat center center
+    background-size: cover
+    &:hover
+        cursor: pointer
+
+/* animation */
+
+@keyframes smoothScroll
+    0%
+        transform: translateY(-40px)
+    100%
+        transform: translateY(0px)
+
+@import "media"
